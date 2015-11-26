@@ -8,6 +8,8 @@ package graphicpro;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -32,6 +34,7 @@ public class GraphicPro extends Application {
     ToggleGroup group;
     RadioButton radAdmin, radStud;
     PasswordField pass;
+    Label Missing;
     
     @Override
     public void start(Stage primaryStage) {
@@ -61,6 +64,7 @@ public class GraphicPro extends Application {
         grid.add(user, 1, 2);
         
         TextField Ip = new TextField();
+        Ip.setText("127.0.0.1");
         grid.add(Ip, 1, 4);
         
         pass = new PasswordField();
@@ -98,6 +102,35 @@ public class GraphicPro extends Application {
                                     pass.setEditable(true);
             }
         });
+        Missing = new Label("Errore");
+        grid.add(Missing, 2, 6);
+        Missing.setVisible(false);
+        
+        butStart.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                if(radStud.isSelected() == true){
+                    if(Ip.getText().equals("") || user.getText().equals("")){
+                        Missing.setText("Errore");
+                        Missing.setVisible(true);
+                    }else{
+                        //ci sbatto la graFica dello studente
+                        Missing.setText("Logged");
+                        Missing.setVisible(true);
+                    }
+                    
+                }else{
+                        if(Ip.getText().equals("") || user.getText().equals("") || pass.getText().equals("")){
+                            Missing.setText("Errore");
+                            Missing.setVisible(true);
+                        }else{
+                            //Ci sbatto la graFica dell ' admin
+                                Missing.setText("Logged");
+                                Missing.setVisible(true);
+                        }
+                    }
+            }
+        });
+        
         
         primaryStage.setScene(scene);
         scene.getStylesheets().add(GraphicPro.class.getResource("Login.css").toExternalForm());
