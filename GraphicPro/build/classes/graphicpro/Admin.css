@@ -4,14 +4,13 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 26-nov-2015, 9.52.54
+    Created on : 1-dic-2015, 12.00.55
     Author     : RyuK
 */
 
-
-.root {
-     -fx-background-image: url("background.jpg");
-     -fx-background-position: 900,500;
+.root{
+    -fx-background-color: #0277bd
+     
 }
 .label {
     -fx-font-size: 15px;
