@@ -10,13 +10,13 @@ and open the template in the editor.
 
 
 .root {
-     -fx-background-image: url("background.jpg");
-     -fx-background-position: 900,500;
+    -fx-background-color: linear-gradient(#03a9f4, #81D4FA);
+    display: block;
 }
 .label {
     -fx-font-size: 15px;
     -fx-font-weight: bold;
-    -fx-text-fill: #333333;
+    -fx-text-fill: #232322;
     -fx-effect: dropshadow( gaussian , rgba(153,255,153,0.5) , 0,0,0,1 );
 }
 #welcome-text {
@@ -34,15 +34,15 @@ and open the template in the editor.
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+    -fx-background-color: linear-gradient(#C0CA33, #AFB42B);
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
 }
 .button:hover {
-    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    -fx-background-color: linear-gradient(#2A5058, #AFB42B);
 }
 .div_text_shadow 
 {
-color: rgb(255, 255, 255);
+color: #388E3C;
 font-size: 50px;
 background-color: rgb(85, 147, 194);
 text-shadow: rgb(204, 204, 204) 0px 1px 0px, rgb(201, 201, 201) 0px 2px 0px, rgb(187, 187, 187) 0px 3px 0px, rgb(185, 185, 185) 0px 4px 0px, rgb(170, 170, 170) 0px 5px 0px, rgba(0, 0, 0, 0.0980392) 0px 6px 1px, rgba(0, 0, 0, 0.0980392) 0px 0px 5px, rgba(0, 0, 0, 0.298039) 0px 1px 3px, rgba(0, 0, 0, 0.14902) 0px 3px 5px, rgba(0, 0, 0, 0.2) 0px 5px 10px, rgba(0, 0, 0, 0.2) 0px 10px 10px, rgba(0, 0, 0, 0.0980392) 0px 20px 20px;
