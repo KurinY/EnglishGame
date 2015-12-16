@@ -6,8 +6,7 @@
 package graphicpro;
 
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
 import javafx.application.Preloader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -16,7 +15,6 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
@@ -66,8 +64,6 @@ public class Admin extends Preloader {
             }
         });
         
-        
-        
         grid.add(Settings, 2, 2);
         grid.add(radAnagramma, 0, 1);
         grid.add(radParoleCrociate, 0 , 2);
@@ -89,17 +85,30 @@ public class Admin extends Preloader {
         grid.setPadding(new Insets(25,25,25,25));
         Scene scene = new Scene(grid, 400,300);
         
-        Label Titolo = new Label("Inserire le parole deparate da una virgola.");
+        Label Titolo = new Label("Dopo ogni parola premere invio.");
         TextArea Parola = new TextArea();
         
-        Button Inserisci = new Button("Inserisci");
+        Button Inserisci = new Button("Sal(v)a");
         grid.add(Parola, 1,1);
         grid.add(Inserisci,1,2);
-        grid.add(Titolo, 1,0);
+        grid.add(Titolo, 1,0);  
         
-        if(radAnagramma.isSelected() == true){
-            
+        ArrayList<String> arr;
+                
+        arr = LeggiScrivi.LeggiFile();
+        for(int k = 0; k<arr.size();k++){
+            Parola.setText(Parola.getText()+arr.get(k)+"\n");
         }
+        
+        Inserisci.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                String[] sas = Parola.getText().split("\n");
+                ArrayList<String> arr = new ArrayList<>();
+                for(int k=0;k<sas.length;k++)
+                    arr.add(sas[k]);
+                LeggiScrivi.ScriviFile(arr);
+            }
+        });
         
         SettingStage.setTitle("Settings");
         SettingStage.setScene(scene);
