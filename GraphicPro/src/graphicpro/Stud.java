@@ -8,16 +8,14 @@ package graphicpro;
 import javafx.application.Preloader;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.event.EventType;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
 
 /**
@@ -28,10 +26,34 @@ import javafx.scene.image.ImageView;
 public class Stud extends Preloader  {
     Stage stage;
     Scene scene;
+    Label[][] lettere = new Label[10][10];
     Games games = new Games();
     
     public void start() throws Exception {
         stage = new Stage();
+        GridPane grid = new GridPane();
+        scene = new Scene(grid,50,590);
+        
+         
+        for(int k=0;k<10;k++){
+            for(int l=0;l<10;l++){
+                lettere[k][l] = new Label("S");       //inizializzo della matrice di 
+                grid.add(lettere[k][l], k, l);        //label ogni label.
+                lettere[k][l].setStyle("-fx-border-color: white;"
+                        + "-fx-border-width: 2;-fx-border-style: solid;");
+                lettere[k][l].setText("S1");
+                lettere[k][l].setPadding(new Insets(17,20,17,20));
+            }
+        }
+        
+        
+        stage.setScene(scene);
+        scene.getStylesheets().add(Stud.class.getResource("Login.css").toExternalForm());
+        stage.show();
+    }
+    
+    public void anagramma(){
+                stage = new Stage();
         GridPane grid = new GridPane();
         scene = new Scene(grid,500,300);
         
