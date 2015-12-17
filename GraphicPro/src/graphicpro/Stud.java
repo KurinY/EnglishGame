@@ -15,7 +15,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -51,12 +50,11 @@ public class Stud extends Preloader  {
 //                lettere[k][l].setText("U");
 //                }
                 grid.setStyle("-fx-border-color: white;"
-                        + "-fx-border-width: 2;"
+                        + "-fx-border-width: 3;"
                         + "-fx-border-style: solid;");
                 lettere[k][l].setPadding(new Insets(17,20,17,20));
             }
         }
-        
         grid.setAlignment(Pos.CENTER);
         scene = new Scene(grid,grid.getPrefHeight(),grid.getPrefWidth());
         stage.setScene(scene);
@@ -64,7 +62,7 @@ public class Stud extends Preloader  {
         stage.show();
     }
     
-    public void anagramma(){
+    public void anagramma() throws Exception {
         stage = new Stage();
         GridPane grid = new GridPane();
         scene = new Scene(grid,500,300);
@@ -73,17 +71,20 @@ public class Stud extends Preloader  {
         
         TextField txtfAna = new TextField();
         Label lblAna = new Label();
+        Label lblText = new Label();
         Label vite= new Label();
         
         lblAna.setText("CIAOOOO");
-        vite.setText("III");               //Ogni volta che si perde uan vita 
+        lblText.setText("Vite: ");
+        vite.setText("I I I");               //Ogni volta che si perde uan vita 
                                            //si modifica il txt della label
                                            //esempio: ("II"), ("I").
             
         grid.add(txtfAna, 1, 2);
         grid.add(lblAna, 1, 1);
         grid.add(butCheck, 1, 3);
-        grid.add(vite, 2, 3);
+        grid.add(lblText, 2,3);
+        grid.add(vite, 3, 3);
         
                                        //Evento del Check: vite etc..
         butCheck.setOnAction(new EventHandler<ActionEvent>() {
@@ -91,9 +92,9 @@ public class Stud extends Preloader  {
                 
             }
         });
-        
+        grid.setAlignment(Pos.CENTER);
         stage.setScene(scene);
-        scene.getStylesheets().add(Stud.class.getResource("Admin.css").toExternalForm());
+        scene.getStylesheets().add(Stud.class.getResource("Login.css").toExternalForm());
         stage.show();
     }
     
@@ -101,5 +102,6 @@ public class Stud extends Preloader  {
     public void start(Stage primaryStage) throws Exception {
 
     }
+
     
 }
