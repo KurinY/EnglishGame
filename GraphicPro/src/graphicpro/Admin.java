@@ -112,7 +112,7 @@ public class Admin extends Preloader {
         
         SettingStage.setTitle("Settings");
         SettingStage.setScene(scene);
-        scenee.getStylesheets().add(Admin.class.getResource("Login.css").toExternalForm());
+        scene.getStylesheets().add(Admin.class.getResource("Login.css").toExternalForm());
         SettingStage.show();
     }
             

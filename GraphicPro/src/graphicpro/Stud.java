@@ -15,7 +15,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 
 /**
@@ -29,11 +32,14 @@ public class Stud extends Preloader  {
     Label[][] lettere = new Label[10][10];
     Games games = new Games();
     
+    
     public void start() throws Exception {
         stage = new Stage();
         GridPane grid = new GridPane();
+        JLabel lblimg = new JLabel();
+        lblimg.setIcon(new ImageIcon("humanhearth.png"));
         
-
+        
         for(int k=0;k<10;k++){
             for(int l=0;l<10;l++){
                 lettere[k][l] = new Label("S");       //inizializzo della matrice di 
@@ -50,6 +56,7 @@ public class Stud extends Preloader  {
                 lettere[k][l].setPadding(new Insets(17,20,17,20));
             }
         }
+        
         grid.setAlignment(Pos.CENTER);
         scene = new Scene(grid,grid.getPrefHeight(),grid.getPrefWidth());
         stage.setScene(scene);
@@ -58,7 +65,7 @@ public class Stud extends Preloader  {
     }
     
     public void anagramma(){
-                stage = new Stage();
+        stage = new Stage();
         GridPane grid = new GridPane();
         scene = new Scene(grid,500,300);
         

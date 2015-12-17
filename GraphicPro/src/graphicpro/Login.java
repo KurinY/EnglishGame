@@ -124,7 +124,7 @@ public class Login extends Application {
                         try {
                             //ci sbatto la graFica dello studente
                             stud.start();
-                            
+                            primaryStage.close();
                         } catch (Exception ex) {
                             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                         }
@@ -141,7 +141,7 @@ public class Login extends Application {
                                 admin = new Admin();
                             try {
                                 admin.start();
-                                
+                                primaryStage.close();
                             } catch (Exception ex) {
                                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                             }
@@ -151,6 +151,7 @@ public class Login extends Application {
                         }
                     }
             }
+            
         });
         
         primaryStage.setResizable(false);
