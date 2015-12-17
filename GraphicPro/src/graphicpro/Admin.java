@@ -20,7 +20,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 /**
  * Simple Preloader Using the ProgressBar Control
@@ -110,9 +109,10 @@ public class Admin extends Preloader {
                 LeggiScrivi.ScriviFile(arr);
             }
         });
+        
         SettingStage.setTitle("Settings");
         SettingStage.setScene(scene);
-        scene.getStylesheets().add(Admin.class.getResource("Admin.css").toExternalForm());
+        scene.getStylesheets().add(Admin.class.getResource("Login.css").toExternalForm());
         SettingStage.show();
     }
             

@@ -124,7 +124,6 @@ public class Login extends Application {
                         try {
                             //ci sbatto la graFica dello studente
                             stud.start();
-                            stud.anagramma();
                             primaryStage.close();
                         } catch (Exception ex) {
                             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
